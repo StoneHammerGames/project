@@ -1,0 +1,194 @@
+@media (min-width: 501px) and (max-width:1024px)
+{
+
+  .main
+  {
+	max-width: 85%;
+  }
+ 
+/*------------------index.html--------------------*/
+
+  div.contactinfo
+  {
+	margin-right: 7%;  
+  }
+
+  img
+  {
+	max-width: 100%;
+	margin: auto;
+  }
+
+  div.campus
+  {
+	background-color: skyblue;
+	margin: 1%;
+	padding: 1%;
+	max-width: 100%;
+  }
+
+  div.eventbar
+  {
+	float: none;
+	background-color: #366849;
+	max-width: 100%;
+	margin: 2%;
+	height: auto;
+	color: white;
+
+  }
+
+  div.footer
+  {
+	background-color: #cccccc;
+  }
+
+/*----------------catalog.html-------------------*/
+  
+  div.campusheader 
+  {
+	margin-left: 15%;
+	max-width: 70%;	
+  }
+
+  .campusheader h1
+  {
+	padding: 15%; 	 
+  }
+
+  .campusheader img
+  {
+	margin: auto;
+	padding: 15px 2px 5px 20px;
+	display: inline;  
+  }
+
+  th
+  {
+	background-color: #366849
+  }
+
+  .register, .modify
+  {
+	max-width: 40%;
+	padding-left: 18%;
+	margin-left: 20%;
+	background-color: #7c7c7c;
+  }
+
+  #button, #addButton, #remButton
+  {
+	margin-left: 15%;
+  }
+  .modify
+  {
+    display: block;
+  }
+  .add, .remove
+  {
+    width: 100%;
+  }
+	div.navigationbar {
+	font-size: .6em;
+	border: 1px dashed;
+	padding: 4px;
+	margin-right: 6px;
+	}
+}
+
+@media (min-width: 501px) and (max-width:1024px) and (orientation:landscape)
+{
+
+  .main
+  {
+	max-width: 85%;
+  }
+
+/*------------------index.html--------------------*/
+
+  div.contactinfo
+  {
+	margin-right: 7%;  
+  }
+
+  img
+  {
+	max-width: 100%;
+	margin: auto;
+  }
+
+  div.campus
+  {
+	background-color: skyblue;
+	margin-left: 5%;
+	margin-bottom: 1%;
+	padding: 1%;
+	clear:left;
+	width: 85%;
+  }
+
+  div.header 
+  {
+	background-color: black;
+	color: white;
+	height: 220px;
+	border-radius: 15px 0px 0px 15px;
+	width: 60%;
+	float:left;
+  }
+
+  div.eventbar
+  {
+	overflow: hidden;
+	background-color: black;
+	margin: auto;
+	height: 200px;
+	font-size: 70%;
+	color: white;
+	border-radius: 0px 15px 15px 0px;
+  }
+
+  div.footer
+  {
+	max-width: 40%;
+	margin: auto;
+  }
+
+/*----------------catalog.html-------------------*/
+
+  div.campusheader 
+  {
+	margin-left: 15%;
+	max-width: 70%;
+  }
+
+  .campusheader h1
+  {
+	padding: 15%;  
+  }
+
+  th
+  {
+	background-color: #25ba35;
+  }
+
+  .register, .modify
+  {
+	max-width: 35%;
+	padding-left: 18%;
+	margin-left: 20%;
+	background-color: #7c7c7c;
+  }
+
+  #button, #addButton, #remButton
+  {
+	margin-left: 15%;
+  }
+
+  div.navigationbar {
+	font-size: .6em;
+	border: 1px dashed;
+	padding: 4px;
+	margin-right: 6px;
+	}
+}

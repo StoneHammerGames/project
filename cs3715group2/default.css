@@ -1,0 +1,158 @@
+body {
+	font-family: sans-serif;
+	margin: 0px;
+	height: 100%;
+
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: #333333;
+}
+
+
+a:visited {
+	color: #555555;
+}
+
+
+a:hover {
+	color: white;
+}
+
+div.header {
+	background-color: black;
+	color: white;
+	height: 220px;
+	border-radius: 15px;
+}
+
+div.campusheader {
+	background-color: black;
+	color: white;
+	height: 220px;
+	border-radius: 15px;
+	margin: 20px;
+}
+
+.campusheader h1 {
+	padding-top: 90px;
+
+}
+
+.campusheader img {
+	margin-top: 20px;
+}
+
+div.contactinfo {
+	float: right;
+	border: 1px dashed;
+	padding: 30px;
+	margin-right: 15px;
+}
+
+div.campus {
+	background-color: skyblue;
+	border-radius: 15px;
+	min-height: 300px;
+	margin-left: 300px;
+}
+
+div.eventbar {
+	background-color: deepskyblue;
+	border-radius: 15px;
+	float: left;
+	padding: 10px;
+	margin: 10px;
+	margin-top: 30px;
+	height: 940px;
+	width: 250px;
+}
+
+div.footer {
+	background-color: #cccccc;
+	border-radius: 15px;
+	padding: 30px;
+	clear: both;
+}
+
+.main { 
+	max-width: 60%;
+	background-color: #ffffff;
+	padding: 0px;
+	margin: auto;
+	margin-top:0px;
+	border-radius: 0px;
+}
+
+.catalog {
+	border: 2px solid deepskyblue;
+	background: white;
+}
+
+img {
+	float: left;
+	padding: 0px 20px;
+}
+
+img.right {
+	float: right;
+}
+
+h2 {
+	padding-left: 20px;
+	font-size: 2.2em;
+}
+
+table {
+	min-width: 60%;
+	margin: auto;
+}
+
+tr {
+	border: 1px solid black;
+}
+tr:nth-child(even) {
+    background: #cccccc;
+}
+tr.shaded {
+	background: #cccccc;
+}
+
+th {
+	background: deepskyblue;
+	border: 1px solid black;
+}
+
+.register, .modify, .admincontrols {
+	background-color: #cccccc;
+	border-radius: 15px;
+	padding: 10px 30px;
+	clear: both;
+  	margin-top: 20px;
+}
+
+table tr.separator
+{
+  background-color: #778899;
+  text-align: center;
+}
+
+.modify
+{
+	display: flex;
+}
+
+.add, .remove
+{
+	width: 50%;
+}
+div.navigationbar {
+	font-size: .8em;
+	border: 1px dashed;
+	padding: 4px;
+	margin-right: 6px;
+}
