@@ -1,9 +1,17 @@
 /**
- * 
+ * http://usejsdoc.org/
  */
 var http = require("http");
-http.createServer(function(request, response) {
-	response.writeHead(200,{"Content-Type": "text/plain"});
-	response.write("Hello World 4");
-	response.end();
-}).listen(8888);
+var url = require("url");
+
+function start(routeFunction, map)
+{
+	function onRequest(request, response)
+	{
+		var pathname = url.parse(request.url).pathname;
+		
+		routeFunction(map, pathname, response);
+	}
+	http.createServer(onRequest).listen(3332);
+}
+exports.start = start;

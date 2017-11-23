@@ -1,0 +1,121 @@
+@media (max-width: 500px)
+{
+  .main
+  {
+    max-width: 95%;
+  }
+  div.campusheader 
+  {
+    background-color: #00008B;
+    height: 25%;
+    margin: 10px;
+    text-align: center;
+  }
+  .campusheader h1
+  {
+    margin: 24px auto;
+    padding: 0; 
+  }
+  .campusheader img
+  {
+    margin: 24px auto;
+    padding: 15px 2px 5px 2px;
+    display: block;    
+  }
+  .campusheader div
+  {
+    text-align: center;
+    width: 100%;
+  }
+  .catalog
+  {
+    border: 2px solid #191970;
+    background: white;
+  }
+  th
+  {
+    background: #483D8B;
+  }
+  .register, .modify
+  {
+    background-color:	#6A5ACD;
+    font-family: Verdana;
+    text-align: center;
+  }
+  form .row
+  {
+    width: 100%;
+    display: table-row;
+    text-align: center;
+  }
+  form .row p
+  {
+    display: table-cell;
+    padding: 4px;
+  }
+  #regButton, #addButton, #remButton
+  {
+    background-color: #696969;
+    color: white;
+    padding: 7px;
+    margin-top: 10px;
+    border-radius: 7px;
+  }
+
+  
+  
+  div.header
+  {
+    height: auto;
+  }
+  .logo
+  {
+    width: 100%;    
+    text-align: center;
+  }
+  div.contactinfo
+  {
+    float: none;
+    padding: 10px 0px;
+    margin: 10px auto;
+    text-align: center;
+    width: 90%;
+  }
+  img
+  {
+    max-width: 90%;
+    float: none;
+    display: block;
+    margin: auto;
+  }
+  div.campus
+  {
+    margin: 4px 5px;
+    text-align: justify;
+    padding: 5px 7px;
+    background-color:	#5F9EA0;
+  }
+  div.eventbar
+  {
+    float: none;
+    background-color: #5F7EA0;
+    margin: 0px 5px 7px 5px;
+    height: auto;
+    color: black;
+    width: auto;
+  }
+  .modify
+  {
+    display: block;
+  }
+  .add, .remove
+  {
+    width: 100%;
+  }
+  div.navigationbar {
+	font-size: .4em;
+	border: 1px dashed;
+	padding: 4px;
+	margin-right: 6px;
+  }
+}
