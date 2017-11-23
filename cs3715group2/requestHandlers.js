@@ -78,6 +78,21 @@ function imagesCampus3Thumb(response)
 	readFileImg(response, "images/campus3_thumb.png", "image/png");
 }
 
+function imagesCampus1Large(response)
+{
+	readFileImg(response, "images/campus1_large.jpg", "image/jpg");
+}
+
+function imagesCampus2Large(response)
+{
+	readFileImg(response, "images/campus2_large.jpg", "image/jpg");
+}
+
+function imagesCampus3Large(response)
+{
+	readFileImg(response, "images/campus3_large.jpg", "image/jpg");
+}
+
 function readFileFunction(response, name, type)
 {
 	fs.readFile(name, function(err, data){
@@ -129,3 +144,6 @@ exports.imagesGVU = imagesGVU;
 exports.imagesCampus1Thumb = imagesCampus1Thumb;
 exports.imagesCampus2Thumb = imagesCampus2Thumb;
 exports.imagesCampus3Thumb = imagesCampus3Thumb;
+exports.imagesCampus1Large = imagesCampus1Large;
+exports.imagesCampus2Large = imagesCampus2Large;
+exports.imagesCampus3Large = imagesCampus3Large;

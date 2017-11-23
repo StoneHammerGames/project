@@ -22,7 +22,8 @@ map["/images/GVU.png"] = requestHandlers.imagesGVU;
 map["/images/campus1_thumb.png"] = requestHandlers.imagesCampus1Thumb;
 map["/images/campus2_thumb.png"] = requestHandlers.imagesCampus2Thumb;
 map["/images/campus3_thumb.png"] = requestHandlers.imagesCampus3Thumb;
+map["/images/campus1_large.jpg"] = requestHandlers.imagesCampus1Large;
+map["/images/campus2_large.jpg"] = requestHandlers.imagesCampus2Large;
+map["/images/campus3_large.jpg"] = requestHandlers.imagesCampus3Large;
 
 server.start(router.route, map);
-
-//60!!!!
