@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NAME University</title>
+    <meta name="viewport" content="width= device-width">
+    <link type="text/css" rel="stylesheet" href="default.css">
+    <link type="text/css" rel="stylesheet" href="tablets.css">
+    <link type="text/css" rel="stylesheet" href="smartphones.css">
+
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="admincontrols">
+        <h4>Admin Mode Enabled.</h4>
+        <form onsubmit="return false;">
+          <div class="row">
+            <p>Add an Event:<br>
+              <input type="text" name="eventname" id="eventname" placeholder="E.g. Basketball on Monday">		
+              <input type="submit" value="Add Event" id="eventsubmit">
+            </p>
+          </div>
+          <div class="row">
+            <p>Update Campus Info:<br>
+           
+              <textarea name="campusinfotext" rows="3" cols="32" id="campusinfotext"></textarea>
+            
+              <select name="characters" id="campusinfoselect">
+              <option value="campus1info">Caltex Centre</option>
+              <option value="campus2info">Ferris College</option>
+              <option value="campus3info">Ableman Ins.</option>
+              </select>
+              <input type="submit" name="Update" value="Update" id="campusinfosubmit"><br>
+            </p>
+          </div>
+          <div class="row">
+            Clear all data:<input type="submit" value="Clear" id="clrButton">
+          </div>
+          <div class="row">
+          Reset to default:<input type="submit" value="Reset" id="rstButton">
+          </div>
+        </form>
+      </div>
+
+      <div class="navigationbar">
+        <table>
+          <tbody>
+            <tr>
+              <td><h2><a href="index.html">Home</a></h2></td>
+              <td><h2><a href="catalog.html">Campus</a></h2></td>
+              <td><h2><a href="student.html">Student</a></h2></td>
+              <td><h2><a href="previouscourses.html">Previous Courses</a></h2></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+	  
+      <div class="header">
+        <h1><center>Welcome to Our University</center></h1>
+        <div class="logo">
+          <img src="../images/GVU.png">
+        </div>
+        <div class="contactinfo">
+				Address<br>
+				Phone
+        </div>
+      </div>
+      <div class="eventbar">
+        <h2>Events</h2>
+        <ul id="eventlist">
+        <li>Monday - Basketball Game</li><li>Tuesday - Another thing</li><li>Wednesday - Another thing</li><li>Thursday - Another thing</li><li>Friday - Another thing</li><li>Saturday - Another thing</li><li>Sunday - Another thing</li></ul>
+      </div>
+      <div class="campus">
+        <h2><a href="catalog.html">Caltex Centre</a></h2>
+        <a target="_blank" href="images/campus1_large.jpg"><img src="../images/campus1_thumb.png"></a>
+        <ul id="campus1info">
+        <li>The new high-tech institute, great for students willing to get involved with technology.</li><li>Its main study programs are Computer Science and Computer Engineering</li></ul>
+      </div>
+      <div class="campus">
+        <h2><a href="catalog.html">Ferris College</a></h2>
+        <a target="_blank" href="images/campus2_large.jpg"><img src="../images/campus2_thumb.png" class="right"></a>
+        <ul id="campus2info">
+        <li>The campus with great history behind it.</li><li>Its main study programs are Chemistry, Anthropology, English and Language Studies.</li></ul>
+      </div>
+      <div class="campus">
+        <h2><a href="catalog.html">Ableman Institute</a></h2>
+        <a target="_blank" href="images/campus3_large.jpg"><img src="../images/campus3_thumb.png"></a>
+        <ul id="campus3info">
+        <li>The first campus.</li><li>Its main study programs are Philosophy and Music</li></ul>
+      </div>
+      <div class="footer">
+        <center>University info/copyright</center>
+      </div>
+    </div>
+  </body>
+</html>

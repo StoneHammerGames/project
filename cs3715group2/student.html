@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Page</title>
+    <meta name="viewport" content="width= device-width">
+    <link type="text/css" rel="stylesheet" href="default.css">
+    <!--<link type="text/css" rel="stylesheet" href="catalog.css">-->
+	  <link type="text/css" rel="stylesheet" href="tablets.css">
+    <link type="text/css" rel="stylesheet" href="smartphones.css">
+    <script type="text/javascript" src="register.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      
+	  <div class="navigationbar">
+		<table>
+			<tbody><tr><td><h2><a href="index.html">Home</a></h2></td>
+			<td><h2><a href="catalog.html">Campus</a></h2></td>
+			<td><h2><a href="student.html">Student</a></h2></td>
+			<td><h2><a href="previouscourses.html">Previous Courses</a></h2></td>
+		</tr></tbody></table>
+	  </div>
+	  
+	  <div class="campusheader">
+        <img src="../images/GVU.png">
+        <h1></h1>
+      </div>
+
+      <h2>Student</h2>
+      <div class="catalog">
+        <table id="regTable">
+          <tbody><tr>  
+            <th>Course Name</th><th>Course Number</th><th>Room</th>
+          </tr>
+          <tr id="CS4754">
+            <td>Database Systems</td><td>CS4754</td><td>EN3045</td>
+          </tr>          
+        </tbody></table>        
+      
+      </div>
+
+      <div class="register">
+        <h4>Register for a course</h4>
+        <form>
+          <div class="row">
+            <p>Course Number: </p>
+            <p><input type="text" name="number" value="" id="registercoursenum"></p>
+          </div>
+          <div class="buttonRow">
+            <input id="regButton" type="button" value="Register">
+          </div>         
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

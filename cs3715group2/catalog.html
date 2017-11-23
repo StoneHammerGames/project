@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Course Catalog</title>
+    <meta name="viewport" content="width= device-width">
+    <link type="text/css" rel="stylesheet" href="default.css">
+    <!--<link type="text/css" rel="stylesheet" href="catalog.css">-->
+	  <link type="text/css" rel="stylesheet" href="tablets.css">
+    <link type="text/css" rel="stylesheet" href="smartphones.css">
+    <script type="text/javascript" src="addRemove.js"></script>
+
+  </head>
+  <body>
+    <div class="main">
+	
+		<div class="navigationbar">
+		<table>
+			<tbody><tr><td><h2><a href="index.html">Home</a></h2></td>
+			<td><h2><a href="catalog.html">Campus</a></h2></td>
+			<td><h2><a href="student.html">Student</a></h2></td>
+			<td><h2><a href="previouscourses.html">Previous Courses</a></h2></td>
+		</tr></tbody></table>
+	  </div>
+	  
+      <div class="campusheader">
+        <img src="../images/campus1_thumb.png">
+        <h1>Caltex Centre</h1>
+      </div>
+
+      <h2>Course Catalog</h2>
+      <div class="catalog">
+        <table id="courseTable">
+          <tbody><tr>  
+            <th>Course Name</th><th>Course Number</th><th>Room</th>
+          </tr>
+          <tr class="separator">
+            <td colspan="3">COMPUTER SCIENCE</td>
+          </tr>
+          <tr id="CS0000">
+            <td>Sample CS course (not available for registration)</td><td>CS0000</td><td>EN0000</td>
+          </tr>
+          <!--<tr id="CS2003">
+            <td>Computer Architecture</td><td>CS2003</td><td>EN2042</td>
+          </tr>  
+          <tr id="CS4754">
+            <td>Database Systems</td><td>CS4754</td><td>EN3045</td>
+          </tr>   
+          <tr id="CS1001">  
+            <td>Intro to Programming</td><td>CS1001</td><td>EN3056</td>
+          </tr>
+          <tr id="CS3715">  
+            <td>Network Comp/WEB Application</td><td>CS3715</td><td>EN1026</td>
+          </tr>-->
+
+          <tr class="separator">
+            <td colspan="3">ENGINEERING</td>
+          </tr>
+          <tr id="EN0000">  
+            <td>Sample EN course (not available for registration)</td><td>EN0000</td><td>EN0000</td>
+          </tr>
+          <!--<tr id="EN3424">  
+            <td>Engineering Mathematics</td><td>EN3424</td><td>EN1620</td>
+          </tr>
+          <tr id="EN1010">  
+            <td>Engineering Statics</td><td>EN1010</td><td>EN3045</td>
+          </tr>
+          <tr id="EN1040">
+            <td>Mechanisms &amp; Electric Circuits</td><td>EN1040</td><td>EN2122</td>
+          </tr>-->
+
+          <tr class="separator">
+            <td colspan="3">CHEMISTRY</td>
+          </tr>
+          <tr id="CHEM0000">  
+            <td>Sample CHEM course (not available for registration)</td><td>CHEM0000</td><td>EN0000</td>
+          </tr>
+          <!--<tr id="CHEM4304">  
+            <td>Advanced Quantum Chemistry</td><td>CHEM4304</td><td>EN1052</td>
+          </tr>
+          <tr id="CHEM1810">  
+            <td>Elements of Chemistry</td><td>CHEM1810</td><td>EN1001</td>
+          </tr>
+          <tr id="CHEM2301">
+            <td>Thermodynamics &amp; Kinetics</td><td>CHEM2301</td><td>EN1051</td>
+          </tr>-->          
+
+          <tr class="separator">
+            <td colspan="3">ANTHROPOLOGY</td>
+          </tr>
+          <tr id="ANTH0000">  
+            <td>Sample ANTH course (not available for registration)</td><td>ANTH0000</td><td>SN0000</td>
+          </tr>
+          <!--<tr id="ANTH4416">
+            <td>Anthropology of Slums</td><td>ANTH4416</td><td>SN3031</td>
+          </tr>  
+          <tr id="ANTH2410">
+            <td>Classics in Anthropology</td><td>ANTH2410</td><td>SN3031</td>
+          </tr>   
+          <tr id="ANTH2416">  
+            <td>Cultural Formations</td><td>ANTH2416</td><td>SN4022</td>
+          </tr>
+          <tr id="ANTH1031">  
+            <td>Introduction to Anthropology</td><td>ANTH1031</td><td>SN1001</td>
+          </tr>-->
+
+          <tr class="separator">
+            <td colspan="3">ENGLISH</td>
+          </tr>
+          <tr id="ENGL0000">  
+            <td>Sample ENGL course (not available for registration)</td><td>ENGL0000</td><td>SN0000</td>
+          </tr>
+          <!--<tr id="ENGL2002">
+            <td>Drama</td><td>ENGL2002</td><td>SN2020</td>
+          </tr>   
+          <tr id="ENGL3021">
+            <td>Medieval and Tudor Drama</td><td>ENGL3021</td><td>SN3441</td>
+          </tr>
+          <tr id="ENGL2242">  
+            <td>Science Fiction</td><td>ENGL2242</td><td>SN3062</td>
+          </tr>
+          <tr id="ENGL1020">  
+            <td>Writing Second Lang Stdnts I</td><td>ENGL1020</td><td>SN1001</td>
+          </tr>-->
+
+          <tr class="separator">
+            <td colspan="3">LANGUAGE STUDIES</td>
+          </tr>
+          <tr id="LANG0000">  
+            <td>Sample LANG course (not available for registration)</td><td>LANG0000</td><td>A0000</td>
+          </tr>
+          <!--<tr id="LANG3010">
+            <td>Advanced Russian I</td><td>LANG3010</td><td>A3100</td>
+          </tr> 
+          <tr id="LANG1000">  
+            <td>Elementary German I</td><td>LANG1000</td><td>A1001</td>
+          </tr>
+           <tr id="LANG2100">  
+            <td>Intermediate French I</td><td>LANG2100</td><td>A3010</td>
+          </tr>
+          <tr id="LANG2010">
+            <td>Intermediate Russian I </td><td>LANG2010</td><td>A1040</td>
+          </tr>-->   
+         
+          <tr class="separator">
+            <td colspan="3">PHILOSOPHY</td>
+          </tr>
+          <tr id="PHIL0000">  
+            <td>Sample PHIL course (not available for registration)</td><td>PHIL0000</td><td>C0000</td>
+          </tr>
+          <!--<tr id="PHIL3940">
+            <td>Existentialism</td><td>PHIL3940</td><td>C3041</td>
+          </tr>
+          <tr id="PHIL1200">  
+            <td>Introduction to Philosophy</td><td>PHIL1200</td><td>C1101</td>
+          </tr>
+          <tr id="PHIL2210">
+            <td>Logic</td><td>PHIL2210</td><td>C3001</td>
+          </tr>   
+          <tr id="PHIL3500">  
+            <td>Philosophy Of Religion</td><td>PHIL3500</td><td>C4022</td>
+          </tr>-->
+          
+          <tr class="separator">
+            <td colspan="3">MUSIC</td>
+          </tr>
+          <tr id="MUS0000">  
+            <td>Sample MUS course (not available for registration)</td><td>MUS0000</td><td>MU0000</td>
+          </tr>
+          <!--<tr id="MUS1117">
+            <td>Aural Skills I</td><td>MUS1117</td><td>MU2014</td>
+          </tr>  
+          <tr id="MUS2612">
+            <td>Chamber Choir</td><td>MUS2612</td><td>MU1002</td>
+          </tr>   
+          <tr id="MUS1105">  
+            <td>Elements of Music I</td><td>MUS1105</td><td>MU3056</td>
+          </tr>
+          <tr id="MUS2011">  
+            <td>North American Popular Music</td><td>MUS2011</td><td>MU1051</td>
+          </tr>-->
+          
+        </tbody></table>        
+      </div>
+
+      <div class="register">
+        <h4>Register for a course</h4>
+        <form>
+          <div class="row">
+            <p>Course Number: </p>
+            <p><input type="text" name="number" value="" id="registercoursenum"></p>
+          </div>
+          <div class="buttonRow">
+            <input id="regButton" type="button" value="Register">
+          </div>         
+        </form>
+      </div>
+
+      <div class="modify">
+        <div class="add">
+          <h4>Add a new course</h4>
+          <form>
+            <div class="row">
+              <p>Course name:</p>
+              <p><input id="addName" type="text" placeholder="E.g. Intro to Programming"></p>
+            </div>
+            <div class="row">
+              <p>Course number:</p>
+              <p><input id="addNumber" type="text" placeholder="E.g. CS1001"></p>
+            </div>
+            <div class="row">
+              <p>Room:</p>
+              <p><input id="addRoom" type="text" placeholder="E.g. EN3056"></p>
+            </div>
+            <div class="buttonRow">
+              <input id="addButton" type="button" value="Add">
+            </div> 
+          </form>
+        </div>
+        <div class="remove">
+          <h4>Remove a course</h4>
+          <form>
+            <div class="row">
+              <p>Course number:</p>
+              <p><input id="remNumber" type="text" placeholder="E.g. CS4754"></p>
+            </div>
+            <div class="buttonRow">
+              <input id="remButton" type="button" value="Remove">
+            </div> 
+          </form>
+        </div>
+      </div>
+
+    </div>
+  
+</body></html>
