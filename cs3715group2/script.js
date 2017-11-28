@@ -1,6 +1,35 @@
+var firstVisit;
+var eventlist = [];
+var campus1info = [];
+var campus2info = [];
+var campus3info = [];
+
 window.onload = init;
 
-function init(){
+function init()
+{
+  var url = "mainData.json";
+  var data;
+  var request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = function()
+  {
+    if (request.status == 200)
+    {
+      data = request.responseText;
+      data = JSON.parse(data);
+      firstvisit = data.firstvisit;
+      eventlist = data.eventlist;
+      campus1info = data.campus1info;
+      campus2info = data.campus1info;
+      campus3info = data.campus1info;
+      afterInit();
+    }
+  }
+  request.send(null);
+}
+
+function afterInit(){
 	
 	//Adds sample text on first visit, and after each clear
 	checkFirstVisit();
@@ -23,17 +52,17 @@ function init(){
 	campusinfosubmitbutton.onclick = handleCampusInfoSubmitClick;
 
 	//Loading the campus information
-	loadCampusList("1");
-	loadCampusList("2");
-	loadCampusList("3");
+	loadCampusList(campus1info);
+	loadCampusList(campus2info);
+	loadCampusList(campus3info);
 }
 
 function checkFirstVisit(){
-	if (localStorage.getItem("firstvisit") == "no"){
+	if (firstvisit == "no"){
 		console.log("do nothing");
 	}
 	else{
-		localStorage.setItem("firstvisit", "no");
+		firstvisit = "no";
 		fillSampleText();
 	}
 }
@@ -107,7 +136,7 @@ function saveArray(item, arrayname) {
 }
 
 function loadEventList() {
-	var eventListArray = getSavedEvents();
+	var eventListArray = eventlist;
 	var ul = document.getElementById("eventlist");
 	if (eventListArray != null) {
 		for (var i = 0; i < eventListArray.length; i++) {
@@ -134,9 +163,8 @@ function getStoreArray(key) {
 }
 
 //================Savid/Loading Campus info========================================
-function loadCampusList(num) {
-	var campustoupdate = `campus${num}info`;
-	var eventListArray = getSavedCampus(campustoupdate);
+function loadCampusList(name) {
+	var eventListArray = name;
 	var ul = document.getElementById(campustoupdate);
 	if (eventListArray != null) {
 		for (var i = 0; i < eventListArray.length; i++) {
@@ -154,14 +182,24 @@ function getSavedCampus(campustoupdate) {
 
 //Text to fill the page on the first visit
 function fillSampleText(){
-	saveArray("Monday - Basketball Game", "eventlist"); 
+	eventlist.push("Monday - Basketball Game");
+	eventlist.push("Tuesday - Another thing");
+	eventlist.push("Wednesday - Another thing");
+	eventlist.push("Thursday - Another thing");
+	eventlist.push("Friday - Another thing");
+	eventlist.push("Saturday - Another thing");
+	eventlist.push("Sunday - Another thing");
+	
+	/*saveArray("Monday - Basketball Game", "eventlist"); 
 	saveArray("Tuesday - Another thing", "eventlist"); 
 	saveArray("Wednesday - Another thing", "eventlist"); 
 	saveArray("Thursday - Another thing", "eventlist"); 
 	saveArray("Friday - Another thing", "eventlist"); 
 	saveArray("Saturday - Another thing", "eventlist"); 
-	saveArray("Sunday - Another thing", "eventlist"); 
+	saveArray("Sunday - Another thing", "eventlist");*/
 
+	campus1info.push("The new high-tech institute, great for students willing to get involved with technology.");
+	campus1info.push("The new high-tech institute, great for students willing to get involved with technology.");
 	saveArray("The new high-tech institute, great for students willing to get involved with technology.", "campus1info");
 	saveArray("Its main study programs are Computer Science and Computer Engineering", "campus1info");
 
