@@ -1,69 +1,108 @@
 window.onload = init;
+var addedCourses = [];
+var registeredCourses = {};
 
 function init()
 {
-	loadRegisteredCourses();
-	var regButton = document.getElementById("regButton");
-	regButton.onclick = clickReg;
+  var url = "studentData.json";
+  var data;
+  var request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = function()
+  {
+    if (request.status == 200)
+    {
+      data = request.responseText;
+      data = JSON.parse(data);
+      registeredCourses = data;
+      var select = document.getElementById("sName");
+      select.onchange = function()
+      {
+        if (select.value != "")
+        {
+          loadRegisteredCourses(registeredCourses[select.value]);
+        }
+        
+      }
+      var regButton = document.getElementById("regButton");
+      regButton.onclick = clickReg;
+    }
+  }
+  request.send(null);
 }
 
 function clickReg()
 {
-	//get the input
-	var coursenuminput = document.getElementById("registercoursenum");
-	var coursenumtoadd = coursenuminput.value.toUpperCase();
-
-	//check to see if the input is a listed course and not removed
-	var courses = getStoreArray("addedCourses");
-	var removedcourses = getStoreArray("removedCourses");
-	var foundflag = false;
-	var removed = false;
-
-	for (var i = 0; i < removedcourses.length; i++)
-	{
-		if (coursenumtoadd == removedcourses[i].number)
-		{
-			alert("I'm sorry, course " + coursenumtoadd + " has been removed.");
-			removed = true;
-			foundflag = true;
-			location.reload();
-		} 
-	}
-
-
-	for (var i = 0; i < courses.length; i++)
-	{
-		if ((coursenumtoadd == courses[i].number) && (removed == false))
-		{
-			foundflag = true;
-			break;
-		} 
-	}
-
-	if (foundflag)
-	{
-		if (notRegistered(coursenumtoadd))
-		{
-			alert("Registering for course " + coursenumtoadd);
-			//add the course to the Student's list
-			registerCourse(courses[i].name, courses[i].number, courses[i].room);
-			location.reload();
-		}
-		else
-		{
-			alert("You are already registered for course: " + coursenumtoadd);
-		}
-	}
-	else
-	{
-		alert("Course not found.");
-	}
+  var studentName = document.getElementById("sName").value;
+  if (studentName != "")
+  {
+    //get the input
+    var coursenuminput = document.getElementById("registercoursenum");
+    var coursenumtoadd = coursenuminput.value.toUpperCase();
+    
+    loadAdded(coursenumtoadd, studentName);
+  }
+  else
+  {
+    alert("Please select your name");
+  }
 }
 
-function notRegistered(coursenumtoadd)
+function loadAdded(coursenumtoadd, studentName)
+{
+  var url = "courseData.json";
+  var data;
+  var request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = function()
+  {
+    if (request.status == 200)
+    {
+      data = request.responseText;
+      data = JSON.parse(data);
+      addedCourses = data["addedCourses"];
+      validateAndRegister(coursenumtoadd, studentName);
+    }
+  }
+  request.send(null);
+}
+
+function validateAndRegister(coursenumtoadd, studentName)
+{
+  var found = false;
+  var i = -1;
+  for (i = 0; i < addedCourses.length; i++)
+  {
+    if (coursenumtoadd == addedCourses[i].number)
+    {
+      found = true;
+      break;
+    } 
+  }
+
+  if (found)
+  {
+    if (notRegistered(registeredCourses[studentName], coursenumtoadd))
+    {
+      alert("Registering for course " + coursenumtoadd);
+      //add the course to the Student's list
+      registerCourse(registeredCourses, studentName, addedCourses[i].name, addedCourses[i].number, addedCourses[i].room);
+      //location.reload();
+    }
+    else
+    {
+      alert("You are already registered for course: " + coursenumtoadd);
+    }
+  }
+  else
+  {
+    alert("Course not found.");
+  } 
+}
+
+function notRegistered(courses, coursenumtoadd)
 {
 	var res = true;
-	var courses = getStoreArray("registeredCourses");
 	for (var i = 0; i < courses.length; i++)
 	{
 		if (coursenumtoadd == courses[i].number){
@@ -74,30 +113,30 @@ function notRegistered(coursenumtoadd)
 	return res;
 }
 
-function getStoreArray(key)
+function saveRegisteredCourses(courses)
 {
-	var courses = localStorage.getItem(key);
-	if (courses == null || courses == "")
-	{
-		courses = new Array();
-	}
-	else
-	{
-		courses = JSON.parse(courses);
-	}
-	return courses;
+  courses = JSON.stringify(courses);
+  var params = 'data='+courses;
+  var request = new XMLHttpRequest();
+  request.open("POST", "/writeRegisteredCoursesData");
+  request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  request.send(params);
 }
 
-function registerCourse(cname, cnumber, croom)
+function registerCourse(list, studentName, cname, cnumber, croom)
 {
-	var list = getStoreArray("registeredCourses");
 	var newCourse = {name: cname, number: cnumber, room: croom};
-	list.push(newCourse);
-	localStorage.setItem("registeredCourses", JSON.stringify(list));
+  var pos = findPos(cnumber, cname);
+  if (pos != -1)
+  {
+    addToTable(pos, cname, cnumber, croom);
+  }
+	list[studentName].push(newCourse);
+	saveRegisteredCourses(list);
 }
 
-function loadRegisteredCourses() {
-	var courses = getStoreArray("registeredCourses");
+function loadRegisteredCourses(courses) {
+  cleanTable();
 	for (var i = 0; i < courses.length; i++)
 	{
 		var pos = findPos(courses[i].number, courses[i].name);
@@ -106,6 +145,21 @@ function loadRegisteredCourses() {
 			addToTable(pos, courses[i].name, courses[i].number, courses[i].room);
 		}
 	}
+}
+
+function cleanTable()
+{
+	var table = document.getElementById("regTable");
+  var rows = table.rows;
+  for (var i = 1; i < rows.length; i++)
+  {
+    var cols = rows[i].getElementsByTagName("td");
+    if (cols[1].innerHTML != "CS4754")
+    {
+      table.deleteRow(i);
+    }
+  }
+	
 }
 
 function findPos(cnumber, cname)

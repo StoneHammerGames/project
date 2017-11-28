@@ -1,19 +1,26 @@
-function getStoreArray(key)
+var removedCourses = [];
+function init()
 {
-	var courses = localStorage.getItem(key);
-	if (courses == null || courses == "")
-	{
-		courses = new Array();
-	}
-	else
-	{
-		courses = JSON.parse(courses);
-	}
-	return courses;
+  var url = "courseData.json";
+  var data;
+  var request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = function()
+  {
+    if (request.status == 200)
+    {
+      data = request.responseText;
+      data = JSON.parse(data);
+      addedCourses = data["addedCourses"];
+      removedCourses = data.removedCourses;
+      loadRemovedCourses();
+    }
+  }
+  request.send(null);
 }
 function loadRemovedCourses()
 {
-	var courses = getStoreArray("removedCourses");
+	var courses = removedCourses;
 	for (var i = 0; i < courses.length; i++)
 	{
 		addToTable(courses[i].name, courses[i].number, courses[i].room, courses[i].time);
@@ -38,4 +45,4 @@ function mapMonth(number)
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	return months[number];
 }
-window.onload = loadRemovedCourses;
+window.onload = init;

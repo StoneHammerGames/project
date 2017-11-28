@@ -3,6 +3,30 @@
  */
 var fs = require("fs");
 
+function writeCourseData(response, data)
+{
+	console.log(data);
+	writeMyFile("courseData.json", data, response);
+}
+
+function writeRegisteredCoursesData(response, data)
+{
+	console.log(data);
+	writeMyFile("studentData.json", data, response);
+}
+
+
+function writeMyFile(name, data, response)
+{
+  fs.writeFile(name,data, "utf8", function(err){
+    if(err)
+    {
+      console.log("Unable to write the data");
+    }
+    response.end();
+  });
+}
+
 function indexHTML(response)
 {
 	readFileFunction(response, "index.html", "text/html");
@@ -56,6 +80,16 @@ function registerJS(response)
 function loadTableJS(response)
 {
 	readFileFunction(response, "loadTable.js", "text/javascript");
+}
+
+function courseDataJSON(response)
+{
+	readFileFunction(response, "courseData.json", "application/json");
+}
+
+function studentDataJSON(response)
+{
+	readFileFunction(response, "studentData.json", "application/json");
 }
 
 function imagesGVU(response)
@@ -147,3 +181,7 @@ exports.imagesCampus3Thumb = imagesCampus3Thumb;
 exports.imagesCampus1Large = imagesCampus1Large;
 exports.imagesCampus2Large = imagesCampus2Large;
 exports.imagesCampus3Large = imagesCampus3Large;
+exports.courseDataJSON = courseDataJSON;
+exports.studentDataJSON = studentDataJSON;
+exports.writeCourseData = writeCourseData;
+exports.writeRegisteredCoursesData = writeRegisteredCoursesData;
