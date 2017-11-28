@@ -199,13 +199,18 @@ function fillSampleText(){
 	saveArray("Sunday - Another thing", "eventlist");*/
 
 	campus1info.push("The new high-tech institute, great for students willing to get involved with technology.");
-	campus1info.push("The new high-tech institute, great for students willing to get involved with technology.");
-	saveArray("The new high-tech institute, great for students willing to get involved with technology.", "campus1info");
-	saveArray("Its main study programs are Computer Science and Computer Engineering", "campus1info");
-
-	saveArray("The campus with great history behind it.", "campus2info");
-	saveArray("Its main study programs are Chemistry, Anthropology, English and Language Studies.", "campus2info");
+	campus1info.push("Its main study programs are Computer Science and Computer Engineering");
 	
-	saveArray("The first campus.", "campus3info");
-	saveArray("Its main study programs are Philosophy and Music", "campus3info");
+	/*saveArray("The new high-tech institute, great for students willing to get involved with technology.", "campus1info");
+	saveArray("Its main study programs are Computer Science and Computer Engineering", "campus1info");*/
+	
+	campus2info.push("The campus with great history behind it.");
+	campus2info.push("Its main study programs are Chemistry, Anthropology, English and Language Studies.");
+	/*saveArray("The campus with great history behind it.", "campus2info");
+	saveArray("Its main study programs are Chemistry, Anthropology, English and Language Studies.", "campus2info");*/
+	
+	campus3info.push("The first campus.");
+	campus3info.push("Its main study programs are Philosophy and Music");
+	/*saveArray("The first campus.", "campus3info");
+	saveArray("Its main study programs are Philosophy and Music", "campus3info");*/
 }
