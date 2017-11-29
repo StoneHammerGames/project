@@ -15,6 +15,11 @@ function writeRegisteredCoursesData(response, data)
 	writeMyFile("studentData.json", data, response);
 }
 
+function writeMainData(response, data)
+{
+	console.log(data);
+	writeMyFile("mainData.json", data, response);
+}
 
 function writeMyFile(name, data, response)
 {
@@ -45,11 +50,6 @@ function studentHTML(response)
 function previouscoursesHTML(response)
 {
 	readFileFunction(response, "previouscourses.html", "text/html");
-}
-
-function directionsHTML(response)
-{
-	readFileFunction(response, "directions.html", "text/html");
 }
 
 function defaultCSS(response)
@@ -87,11 +87,6 @@ function loadTableJS(response)
 	readFileFunction(response, "loadTable.js", "text/javascript");
 }
 
-function directionsJS(response)
-{
-	readFileFunction(response, "directions.js", "text/javascript");
-}
-
 function courseDataJSON(response)
 {
 	readFileFunction(response, "courseData.json", "application/json");
@@ -100,6 +95,11 @@ function courseDataJSON(response)
 function studentDataJSON(response)
 {
 	readFileFunction(response, "studentData.json", "application/json");
+}
+
+function mainDataJSON(response)
+{
+	readFileFunction(response, "mainData.json", "application/json");
 }
 
 function imagesGVU(response)
@@ -177,7 +177,6 @@ exports.indexHTML = indexHTML;
 exports.catalogHTML = catalogHTML;
 exports.studentHTML = studentHTML;
 exports.previouscoursesHTML = previouscoursesHTML;
-exports.directionsHTML = directionsHTML;
 exports.defaultCSS = defaultCSS;
 exports.tabletsCSS = tabletsCSS;
 exports.smartphonesCSS = smartphonesCSS;
@@ -185,7 +184,6 @@ exports.scriptJS = scriptJS;
 exports.addRemoveJS = addRemoveJS;
 exports.registerJS = registerJS;
 exports.loadTableJS = loadTableJS;
-exports.directionsJS = directionsJS;
 exports.imagesGVU = imagesGVU;
 exports.imagesCampus1Thumb = imagesCampus1Thumb;
 exports.imagesCampus2Thumb = imagesCampus2Thumb;
@@ -195,5 +193,7 @@ exports.imagesCampus2Large = imagesCampus2Large;
 exports.imagesCampus3Large = imagesCampus3Large;
 exports.courseDataJSON = courseDataJSON;
 exports.studentDataJSON = studentDataJSON;
+exports.mainDataJSON = mainDataJSON;
 exports.writeCourseData = writeCourseData;
+exports.writeMainData = writeMainData;
 exports.writeRegisteredCoursesData = writeRegisteredCoursesData;

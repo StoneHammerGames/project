@@ -8,8 +8,7 @@ window.onload = init;
 
 function init()
 {
-  //var url = "mainData.json";
-	var url = "courseData.json";
+  var url = "mainData.json";
   var data;
   var request = new XMLHttpRequest();
   request.open("GET", url);
@@ -53,9 +52,9 @@ function afterInit(){
 	campusinfosubmitbutton.onclick = handleCampusInfoSubmitClick;
 
 	//Loading the campus information
-	loadCampusList(campus1info);
-	loadCampusList(campus2info);
-	loadCampusList(campus3info);
+	loadCampusList(campus1info, "campus1info");
+	loadCampusList(campus2info, "campus2info");
+	loadCampusList(campus3info, "campus3info");
 }
 
 function checkFirstVisit(){
@@ -70,10 +69,54 @@ function checkFirstVisit(){
 
 
 function clearStorage() {
-	localStorage.clear();
-	localStorage.setItem("firstvisit", "no");
+	/*localStorage.clear();*/
+	firstvisit = "no";
+	eventlist = [];
+	campus1info = [];
+	campus2info = [];
+	campus3info = [];
+	writeData();
+	clearStudentData();
+	clearCourseData();
+	//localStorage.setItem("firstvisit", "no");
 	alert("All data cleared!");
 	location.reload();
+}
+
+function writeData()
+{
+	var fullData = { firstvisit: firstvisit, eventlist: eventlist, campus1info: campus1info, campus2info: campus2info, campus3info: campus3info};
+	fullData = JSON.stringify(fullData);
+	//console.log(fullData);
+	var params = 'data='+fullData;
+	var request = new XMLHttpRequest();
+	request.open("POST", "/writeMainData");
+	request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	request.send(params);
+}
+
+function clearStudentData()
+{
+	var fullData = {student1: [], student2: [], student3: [], student4: [], student5: [], student6: [], student7: [], student8: [], student9: [], student10: [] };
+	fullData = JSON.stringify(fullData);
+	//console.log(fullData);
+	var params = 'data='+fullData;
+	var request = new XMLHttpRequest();
+	request.open("POST", "/writeRegisteredCoursesData");
+	request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	request.send(params);
+}
+
+function clearCourseData()
+{
+	var fullData = { addedCourses:[], removedCourses:[]};
+	fullData = JSON.stringify(fullData);
+	//console.log(fullData);
+	var params = 'data='+fullData;
+	var request = new XMLHttpRequest();
+	request.open("POST", "/writeCourseData");
+	request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	request.send(params);
 }
 
 function setDefault(){
@@ -94,11 +137,11 @@ function handleEventSubmitClick(){
 	li.innerHTML = eventtext;
 
 	//add the element to the list
-	var eventlist = document.getElementById("eventlist");
-	eventlist.appendChild(li);
+	var eventList = document.getElementById("eventlist");
+	eventList.appendChild(li);
 	
 	//saving
-	saveArray(eventtext, "eventlist"); //New. Saves (pushes) the first argument to the array named in the second argument -SS
+	saveArray(eventtext, eventlist); //New. Saves (pushes) the first argument to the array named in the second argument -SS
 
 }
 
@@ -109,7 +152,19 @@ function handleCampusInfoSubmitClick(){
 	var num = campusselect.value;
 	
 	//var campustoupdate = document.getElementById(num);
-	var campustoupdate = `${num}`;
+	var campustoupdate;
+	if (num == "campus1info")
+	{
+		campustoupdate = campus1info;	
+	}
+	else if (num == "campus2info")
+	{
+		campustoupdate = campus2info;	
+	}
+	else
+	{
+		campustoupdate = campus3info;
+	}
 
 	//get the input text from the text box
 	var campusinfotextbox = document.getElementById("campusinfotext");
@@ -120,10 +175,11 @@ function handleCampusInfoSubmitClick(){
 	li.innerHTML = eventtext;
 
 	//add the element to the list
-	var campuslist = document.getElementById(campustoupdate);
+	var campuslist = document.getElementById(num);
 	campuslist.appendChild(li);
 	
 	//saving
+	console.log(typeof campustoupdate);
 	saveArray(eventtext, campustoupdate);	
 }
 
@@ -131,9 +187,8 @@ function handleCampusInfoSubmitClick(){
 //===========Saving/Loading arrays=====================================
 
 function saveArray(item, arrayname) {	
-	var array = getStoreArray(arrayname);
-	array.push(item);
-	localStorage.setItem(arrayname, JSON.stringify(array));
+	arrayname.push(item);
+	writeData();
 }
 
 function loadEventList() {
@@ -149,10 +204,10 @@ function loadEventList() {
 }
 
 function getSavedEvents() {
-	return getStoreArray("eventlist");
+	return eventlist;
 }
 
-function getStoreArray(key) {
+/*function getStoreArray(key) {
 	var eventListArray = localStorage.getItem(key);
 	if (eventListArray == null || eventListArray == "") {
 		eventListArray = new Array();
@@ -161,12 +216,12 @@ function getStoreArray(key) {
 		eventListArray = JSON.parse(eventListArray);
 	}
 	return eventListArray;
-}
+}*/
 
 //================Savid/Loading Campus info========================================
-function loadCampusList(name) {
-	var eventListArray = name;
-	var ul = document.getElementById(campustoupdate);
+function loadCampusList(arrayname, name) {
+	var eventListArray = arrayname;
+	var ul = document.getElementById(name);
 	if (eventListArray != null) {
 		for (var i = 0; i < eventListArray.length; i++) {
 			var li = document.createElement("li");
@@ -176,9 +231,9 @@ function loadCampusList(name) {
 		}
 	}
 }
-function getSavedCampus(campustoupdate) {
+/*function getSavedCampus(campustoupdate) {
 	return getStoreArray(campustoupdate);
-}
+}*/
 //==================================================================================
 
 //Text to fill the page on the first visit
