@@ -8,7 +8,8 @@ window.onload = init;
 
 function init()
 {
-  var url = "mainData.json";
+  //var url = "mainData.json";
+	var url = "courseData.json";
   var data;
   var request = new XMLHttpRequest();
   request.open("GET", url);

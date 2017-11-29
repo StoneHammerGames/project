@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>NAME University</title>
+    <meta name="viewport" content="width= device-width">
+    <link type="text/css" rel="stylesheet" href="default.css">
+    <link type="text/css" rel="stylesheet" href="tablets.css">
+    <link type="text/css" rel="stylesheet" href="smartphones.css">
+
+    <script src="script.js"></script>
+    <script src="serverdatabase.js"></script>
+    
+    <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
+	<script type="text/javascript" src="directions.js"></script>
+	
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="http://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal"></script>
+ 
+	
+  </head>
+  <body>
+    <div class="main">
+      <div class="navigationbar">
+        <table>
+          <tbody>
+            <tr>
+              <td><h2><a href="index.html">Home</a></h2></td>
+              <td><h2><a href="student.html">Student</a></h2></td>
+              <td><h2><a href="previouscourses.html">Previous Courses</a></h2></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> 
+       
+      <div class="campusheader">
+        <img src="../images/campus1_thumb.png">
+        <h1 id="heading">Caltex Centre</h1>
+      </div>
+      
+      <div class="mapgui">
+      	<div id="location">
+			Your location will go here. Test
+		</div>
+		<div id="distance">
+			Distance from WickedlySmart HQ will go here.
+		</div>
+		<div id="map">
+		Map
+		</div>
+	</div>
+      
+    
+      <div class="footer">
+        <center>University info/copyright</center>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
   <head>
     <title>NAME University</title>
@@ -8,9 +9,17 @@
     <link type="text/css" rel="stylesheet" href="smartphones.css">
 
     <script src="script.js"></script>
+    <script src="serverdatabase.js"></script>
   </head>
   <body>
     <div class="main">
+    	<div class "databasetest">
+    		<p>Add some data to an account:<br>
+              <input type="text" name="username" id="username" placeholder="Insert user">
+              		
+              <input type="submit" value="Add Event" id="eventsubmit">
+            </p>
+    	</div>
       <div class="admincontrols">
         <h4>Admin Mode Enabled.</h4>
         <form onsubmit="return false;">
@@ -47,7 +56,6 @@
           <tbody>
             <tr>
               <td><h2><a href="index.html">Home</a></h2></td>
-              <td><h2><a href="catalog.html">Campus</a></h2></td>
               <td><h2><a href="student.html">Student</a></h2></td>
               <td><h2><a href="previouscourses.html">Previous Courses</a></h2></td>
             </tr>
@@ -71,22 +79,27 @@
         <li>Monday - Basketball Game</li><li>Tuesday - Another thing</li><li>Wednesday - Another thing</li><li>Thursday - Another thing</li><li>Friday - Another thing</li><li>Saturday - Another thing</li><li>Sunday - Another thing</li></ul>
       </div>
       <div class="campus">
-        <h2><a href="catalog.html">Caltex Centre</a></h2>
+        <h2><a href="catalog.html?campus=Caltex Centre">Caltex Centre</a></h2>
         <a target="_blank" href="images/campus1_large.jpg"><img src="../images/campus1_thumb.png"></a>
         <ul id="campus1info">
         <li>The new high-tech institute, great for students willing to get involved with technology.</li><li>Its main study programs are Computer Science and Computer Engineering</li></ul>
+        <a href="directions.html?campus=Caltex Centre">Directions</a>
+        <a href="directions.html">Directions</a> <br>
+        <a href="mapPage.html">New directons page test</a>
       </div>
       <div class="campus">
-        <h2><a href="catalog.html">Ferris College</a></h2>
+        <h2><a href="catalog.html?campus=Ferris College">Ferris College</a></h2>	
         <a target="_blank" href="images/campus2_large.jpg"><img src="../images/campus2_thumb.png" class="right"></a>
         <ul id="campus2info">
         <li>The campus with great history behind it.</li><li>Its main study programs are Chemistry, Anthropology, English and Language Studies.</li></ul>
+      	<a href="directions.html?campus=Ferris College">Directions</a>
       </div>
       <div class="campus">
-        <h2><a href="catalog.html">Ableman Institute</a></h2>
+        <h2><a href="catalog.html?campus=Ableman Institute">Ableman Institute</a></h2>
         <a target="_blank" href="images/campus3_large.jpg"><img src="../images/campus3_thumb.png"></a>
         <ul id="campus3info">
         <li>The first campus.</li><li>Its main study programs are Philosophy and Music</li></ul>
+      	<a href="directions.html?campus=Ableman Institute">Directions</a>
       </div>
       <div class="footer">
         <center>University info/copyright</center>

@@ -1,8 +1,23 @@
+function getUrlVars() {
+    var campusName = "";
+	var url = window.location.href,
+        vars = {};
+    url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+         key = decodeURIComponent(key);
+         value = decodeURIComponent(value);
+         campusName = value;
+    });
+    return campusName;
+}
+var campusName = getUrlVars();
+console.log("the campus selected is");
+console.log(campusName);
+
 var addedCourses = [];
 var removedCourses = [];
 
 function init()
-{
+{	
   var url = "courseData.json";
   var data;
   var request = new XMLHttpRequest();
@@ -31,6 +46,10 @@ function afterInit()
 	addButton.onclick = clickAdd;
 	remButton.onclick = clickRem;
 	regButton.onclick = clickReg;
+	
+	//Setting the header to the correct campus name
+	document.getElementById("heading").innerHTML = campusName;
+	
 }
 
 function clickAdd()
