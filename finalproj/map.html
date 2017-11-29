@@ -1,11 +1,33 @@
+<!doctype html>
 <html>
-<head></head>
+<head>
+<title>GVU Directions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="http://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal"></script>
 
+
+<script src="directions.js"></script>
+<link rel="stylesheet" href="default.css">
+<link rel="stylesheet" href="map.css">
+</head>
 <body>
 
-Map test
+<div class="main">
+ <div class="admincontrols">
+    <div id="location">
+	Below you may find directions from your current location to the GVU campus. Please ensure that you have geolocation enabled.
+    </div>
 
-
+    <div id="map">
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
+
+
+
+
