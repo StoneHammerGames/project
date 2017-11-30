@@ -31,7 +31,9 @@ map["/images/campus2_large.jpg"] = requestHandlers.imagesCampus2Large;
 map["/images/campus3_large.jpg"] = requestHandlers.imagesCampus3Large;
 map["/courseData.json"] = requestHandlers.courseDataJSON;
 map["/studentData.json"] = requestHandlers.studentDataJSON;
+map["/mainData.json"] = requestHandlers.mainDataJSON;
 map["/writeCourseData"] = requestHandlers.writeCourseData;
+map["/writeMainData"] = requestHandlers.writeMainData;
 map["/writeRegisteredCoursesData"] = requestHandlers.writeRegisteredCoursesData;
 
 server.start(router.route, map);
