@@ -51,9 +51,13 @@ function previouscoursesHTML(response)
 {
 	readFileFunction(response, "previouscourses.html", "text/html");
 }
-function directionsHTML(response)
+function mapHTML(response)
 {
-	readFileFunction(response, "directions.html", "text/html");
+	readFileFunction(response, "map.html", "text/html");
+}
+function mapCSS(response)
+{
+	readFileFunction(response, "map.css", "text/css")
 }
 function defaultCSS(response)
 {
@@ -88,6 +92,11 @@ function registerJS(response)
 function loadTableJS(response)
 {
 	readFileFunction(response, "loadTable.js", "text/javascript");
+}
+
+function directionsJS(response)
+{
+	readFileFunction(response, "directions.js", "text/javascript");
 }
 
 function courseDataJSON(response)
@@ -180,7 +189,8 @@ exports.indexHTML = indexHTML;
 exports.catalogHTML = catalogHTML;
 exports.studentHTML = studentHTML;
 exports.previouscoursesHTML = previouscoursesHTML;
-exports.directionsHTML = directionsHTML;
+exports.mapHTML = mapHTML;
+exports.mapCSS = mapCSS;
 exports.defaultCSS = defaultCSS;
 exports.tabletsCSS = tabletsCSS;
 exports.smartphonesCSS = smartphonesCSS;

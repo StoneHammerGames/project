@@ -13,6 +13,7 @@ map["/student.html"] = requestHandlers.studentHTML;
 map["/previouscourses.html"] = requestHandlers.previouscoursesHTML;
 map["/directions.html"] = requestHandlers.directionsHTML;
 map["/map.html"] = requestHandlers.mapHTML;
+map["/map.css"] = requestHandlers.mapCSS;
 map["/default.css"] = requestHandlers.defaultCSS;
 map["/tablets.css"] = requestHandlers.tabletsCSS;
 map["/smartphones.css"] = requestHandlers.smartphonesCSS;
