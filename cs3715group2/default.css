@@ -153,6 +153,6 @@ table tr.separator
 div.navigationbar {
 	font-size: .8em;
 	border: 1px dashed;
-	padding: 4px;
+	padding: 4px 20px;
 	margin-right: 6px;
 }

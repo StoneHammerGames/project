@@ -28,9 +28,10 @@ function init()
 function getMyLocation() {
 	if (navigator.geolocation) {
 
-		navigator.geolocation.getCurrentPosition(
-			displayLocation, 
-			displayError);
+		//navigator.geolocation.getCurrentPosition(
+			//displayLocation, 
+			//displayError);
+		displayLocation();
 	}
 	else {
 		alert("Oops, no geolocation support");
@@ -38,11 +39,12 @@ function getMyLocation() {
 	init();
 }
 
-function displayLocation(position) {
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;
+function displayLocation() {
+	//var latitude = position.coords.latitude;
+	//var longitude = position.coords.longitude;
 	var div = document.getElementById("location");
-	showMap(position.coords);
+	var hardcoords = {latitude: 47.50, longitude: -52.99}
+	showMap(hardcoords);
 }
 
 function showMap(coords) {
@@ -50,7 +52,7 @@ function showMap(coords) {
 												  coords.longitude);
 	var mapOptions = {
 		zoom: 10,
-		center: googleLatAndLong,
+		center: {lat: 47.50, lng: -52.99},
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	var directionsService = new google.maps.DirectionsService;
@@ -60,12 +62,12 @@ function showMap(coords) {
 	map = new google.maps.Map(mapDiv, mapOptions);
 	
 	directionsDisplay.setMap(map);
-	calculateAndDisplayRoute(directionsService, directionsDisplay, googleLatAndLong);
+	calculateAndDisplayRoute(directionsService, directionsDisplay);
 }
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay, googleLatAndLong) {
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
-      origin: googleLatAndLong,
+      origin: {lat: 47.58, lng: -52.73},
       destination: {lat: 47.50, lng: -52.99},
       travelMode: 'DRIVING'
     }, function(response, status) {
