@@ -51,10 +51,6 @@ function previouscoursesHTML(response)
 {
 	readFileFunction(response, "previouscourses.html", "text/html");
 }
-function directionsHTML(response)
-{
-	readFileFunction(response, "directions.html", "text/html");
-}
 function mapHTML(response)
 {
 	readFileFunction(response, "map.html", "text/html");
@@ -101,10 +97,6 @@ function loadTableJS(response)
 function directionsJS(response)
 {
 	readFileFunction(response, "directions.js", "text/javascript");
-}
-function serverdatabaseJS(response)
-{
-	readFileFunction(response, "serverdatabase.js", "text/javascript");
 }
 
 function courseDataJSON(response)
@@ -198,7 +190,6 @@ exports.catalogHTML = catalogHTML;
 exports.studentHTML = studentHTML;
 exports.previouscoursesHTML = previouscoursesHTML;
 exports.mapHTML = mapHTML;
-exports.directionsHTML = directionsHTML;
 exports.mapCSS = mapCSS;
 exports.defaultCSS = defaultCSS;
 exports.tabletsCSS = tabletsCSS;
@@ -208,7 +199,6 @@ exports.addRemoveJS = addRemoveJS;
 exports.registerJS = registerJS;
 exports.loadTableJS = loadTableJS;
 exports.directionsJS = directionsJS;
-exports.serverdatabaseJS = serverdatabaseJS;
 exports.imagesGVU = imagesGVU;
 exports.imagesCampus1Thumb = imagesCampus1Thumb;
 exports.imagesCampus2Thumb = imagesCampus2Thumb;

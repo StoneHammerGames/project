@@ -47,8 +47,6 @@ div.campusheader {
 	margin-top: 20px;
 }
 
-
-
 div.contactinfo {
 	float: right;
 	border: 1px dashed;
@@ -157,11 +155,4 @@ div.navigationbar {
 	border: 1px dashed;
 	padding: 4px;
 	margin-right: 6px;
-}
-
-div.directionsbutton {
-	padding-left: 20px;
-	padding-bottom: 20px;
-	font-size: 130%;
-	text-align: center;
 }
